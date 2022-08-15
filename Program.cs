@@ -68,13 +68,13 @@ namespace CSharpSomething {
         }
 
         private void WriteToFile(string filepath) {
-            if (right != null) {
-                File.AppendAllText(filepath, $"    {value} -- {right.value}\n");
-                right.WriteToFile(filepath);
-            }
             if (left != null) {
                 File.AppendAllText(filepath, $"    {value} -- {left.value}\n");
                 left.WriteToFile(filepath);
+            }
+            if (right != null) {
+                File.AppendAllText(filepath, $"    {value} -- {right.value}\n");
+                right.WriteToFile(filepath);
             }
         }
 
